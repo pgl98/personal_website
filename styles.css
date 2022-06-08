@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@400;500&display=swap');
+
+@viewport {
+    width: device-width;
+}
+
+:root {
+    font-size: 16px;
+    --bgcolor: #231F20;
+    --txtcolor: #D8DBE2;
+    --bordercolor: #5386E4;
+    --linkcolor: #20BF55;
+    --warningcolor: #C1292E;
+    --accentcolor: #8F3985;
+}
+
+body {
+    background-color: var(--bgcolor);
+    color: var(--txtcolor);
+    font-family: 'Montserrat', Arial, sans-serif;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/*------ HTML Body Elements--------*/
+header {
+    display: flex;
+    padding: 0 0 1em 0;
+}
+
+
+nav {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+main {
+    padding: 0.5em;
+}
+
+footer {
+    padding: 1em;
+}
+
+/*------ Text Elements ---------*/
+h1, h2, h3 {
+    font-family: 'Playfair Display', 'Book Antiqua', serif;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+}
+
+h1, h2 {
+    background-color: var(--accentcolor);
+    box-shadow: -0.1em 0.1em var(--txtcolor);
+    border-radius: 20px;
+    font-size: 1.5em;
+}
+
+h3 {
+    border-bottom: solid thick var(--accentcolor);
+}
+
+p {
+    margin: 1em;
+    padding: 1em;
+    text-align: left;
+}
+
+b, strong {
+    color: var(--warningcolor);
+    font-weight: bolder;
+}
+
+ul, ol {
+    padding: 0 0 0 10px;
+}
+
+li {
+    margin: 1em;
+    text-align: left;
+}
+
+a {
+    color: var(--linkcolor);
+}
+
+/*------ Embedded Elements -------------*/
+figure img {
+    width: 100%;
+}
+
+.puzzles {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.puzzles > * {
+    flex-shrink : 4;
+}
+
+/*------- Tables --------------*/
+table, th, td {
+    border: 1px solid var(--bordercolor);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+/*----- Nav Elements ------------*/
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: block;
+    text-align: center;
+    border-bottom: solid var(--bordercolor);
+}
+
+nav a {
+    display: block;
+    padding: 1em;
+    color: var(--txtcolor);
+    text-decoration: none;
+}
+
+/*------ Header Elements --------------*/
+
+header h1 {
+    margin-left: auto;
+    background-color: var(--bgcolor);
+    border: none;
+    box-shadow: none;
+    font-size: 1.5rem;
+}
+
+header img {
+    width: 20%;
+    margin: 1em 0 0 1em;
+}
+
+/*-----------THIS PART IS FOR WIDESCREENS ONLY ----------- */
+@media screen and (min-width: 992px) {
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+        "header header"
+        "nav main"
+        "footer main";
+}
+
+/*------ HTML Body --------*/
+header {
+    grid-area: header;
+    padding: 0;
+    text-align: end;
+}
+
+nav {
+    border-top: solid thick var(--bordercolor);
+    grid-area: nav;
+    justify-self: end;
+    align-self: start;
+    text-align: end;
+    width: 100%;
+    margin: 0 0;
+    position: sticky;
+    top: 0;
+}
+
+main {
+    grid-area: main;
+    padding: 2em;
+    border-top: solid thick var(--bordercolor);
+    border-left: solid thick var(--bordercolor);
+}
+
+footer {
+    grid-area: footer;
+    justify-self: end;
+    align-self: end;
+    text-align: end;
+    padding: 1rem;
+}
+
+/*------ Embedded Elements -------------*/
+/* We can give a literal to the widths because we know the min size of the screen */
+
+figure img {
+    width: 250px;
+    float: left;
+    padding: 1em 1em 1em 0;
+}
+
+
+.recipe img {
+    float: none;
+    padding: 0;
+}
+
+.puzzles figure {
+    width: 250px;
+}
+
+/*----- Header Elements --------*/
+header img {
+    width: 10%;
+}
+
+header h1 {
+    background-color: var(--bgcolor);
+    border: none;
+    box-shadow: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-size: 2rem;
+}
+
+nav li {
+    text-align: end;
+}
+
+/*------ Fancy CSS --------*/
+@media (hover:hover) {
+    nav a:hover {
+        background-color: var(--bordercolor);
+        transition: 0.2s;
+    }
+
+    .puzzles img:hover{
+        transform: scale(1.5);
+        transition: 0.2s;
+    }
+}
+
+}
+
+/* For ULTRA-WIDE screens, fix the width of the body element */
+@media screen and (min-width: 1024px) {
+body {
+    width: 1024px;
+}
+}
