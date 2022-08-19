@@ -6,12 +6,12 @@
 
 :root {
     font-size: 16px;
-    --bgcolor: #231F20;
-    --txtcolor: #D8DBE2;
+    --bgcolor: #D8DBE2;
+    --txtcolor: black;
     --bordercolor: #5386E4;
-    --linkcolor: #20BF55;
+    --linkcolor: #8332AC;
     --warningcolor: #C1292E;
-    --accentcolor: #8F3985;
+    --accentcolor: #20BF55;
 }
 
 body {
@@ -23,17 +23,6 @@ body {
 }
 
 /*------ HTML Body Elements--------*/
-header {
-    display: flex;
-    padding: 0 0 1em 0;
-}
-
-
-nav {
-    width: 80%;
-    margin: 0 auto;
-}
-
 
 main {
     padding: 0.5em;
@@ -51,6 +40,7 @@ h1, h2, h3 {
 }
 
 h1, h2 {
+
     background-color: var(--accentcolor);
     box-shadow: -0.1em 0.1em var(--txtcolor);
     border-radius: 20px;
@@ -77,8 +67,8 @@ ul, ol {
 }
 
 li {
+    list-style-type: none;
     margin: 1em;
-    text-align: left;
 }
 
 a {
@@ -86,42 +76,29 @@ a {
 }
 
 /*------ Embedded Elements -------------*/
-figure img {
+img {
     width: 100%;
 }
 
-.puzzles {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
+/*----- Address Elements ------------*/
+address h2 {
+    background-color: var(--bgcolor);
+    margin-bottom: 0%;
+    border-radius: 0%;
+    box-shadow: none;
+    text-align: center;
 }
 
-.puzzles > * {
-    flex-shrink : 4;
-}
-
-/*------- Tables --------------*/
-table, th, td {
-    border: 1px solid var(--bordercolor);
-}
-
-table {
-    border-collapse: collapse;
-}
-
-/*----- Nav Elements ------------*/
-nav ul {
+address ul {
     list-style-type: none;
-    padding: 0;
 }
 
-nav li {
+address li {
     display: block;
     text-align: center;
-    border-bottom: solid var(--bordercolor);
 }
 
-nav a {
+address a {
     display: block;
     padding: 1em;
     color: var(--txtcolor);
@@ -157,34 +134,20 @@ body {
     grid-template-columns: 1fr 3fr;
     grid-template-areas: 
         "header header"
-        "nav main"
-        "footer main";
+        "main main"
+        "main main";
 }
 
 /*------ HTML Body --------*/
 header {
     grid-area: header;
     padding: 0;
-    text-align: end;
-}
-
-nav {
-    border-top: solid thick var(--bordercolor);
-    grid-area: nav;
-    justify-self: end;
-    align-self: start;
-    text-align: end;
-    width: 100%;
-    margin: 0 0;
-    position: sticky;
-    top: 0;
+    text-align: center;
 }
 
 main {
     grid-area: main;
     padding: 2em;
-    border-top: solid thick var(--bordercolor);
-    border-left: solid thick var(--bordercolor);
 }
 
 footer {
@@ -223,18 +186,16 @@ header h1 {
     background-color: var(--bgcolor);
     border: none;
     box-shadow: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
     font-size: 2rem;
 }
 
-nav li {
+address li {
     text-align: end;
 }
 
 /*------ Fancy CSS --------*/
 @media (hover:hover) {
-    nav a:hover {
+    address a:hover {
         background-color: var(--bordercolor);
         transition: 0.2s;
     }
